@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>KPR CAS | Assignment Tool</title>
+        <style>
+            :root {
+                --primary: #1a73e8;
+                --bg: #f1f3f4;
+                --card-bg: #ffffff;
+                --border: #dee2e6;
+            }
+
+            * {
+                font-family:
+                    sans-serif Impact,
+                    Haettenschweiler,
+                    "Arial Narrow Bold",
+                    sans-serif;
+                margin: 0;
+            }
+
+            body,
+            input,
+            select,
+            button,
+            label,
+            h3 {
+                font-family: sans-serif;
+                margin: 0;
+            }
+
+            body {
+                background-color: var(--bg);
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .form-card {
+                background: var(--card-bg);
+                padding: 20px 30px;
+                border-radius: 10px;
+                max-width: 550px; /* Slimmer page width */
+                width: 100%;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border: 1px solid var(--border);
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 15px;
+                border-bottom: 1px solid var(--primary);
+            }
+
+            h3 {
+                color: var(--primary);
+                margin-bottom: 5px;
+                font-size: 22px;
+            }
+
+            .section-label {
+                font-size: 12px;
+                color: #5f6368;
+                text-transform: uppercase;
+                margin: 15px 0 5px 0;
+                border-bottom: 1px dashed var(--border);
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 15px;
+            }
+
+            .input-group {
+                margin-bottom: 8px;
+            }
+
+            label {
+                font-weight: 600;
+                display: block;
+                font-size: 14px;
+                margin-bottom: 2px;
+            }
+
+            input,
+            select {
+                width: 100%;
+                padding: 6px 10px;
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+                background-color: #fff;
+            }
+
+            input:focus,
+            select:focus {
+                outline: none;
+                border-color: var(--primary);
+            }
+
+            .full-width {
+                grid-column: span 2;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                background: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                margin-top: 20px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: opacity 0.2s;
+            }
+
+            button:hover {
+                opacity: 0.9;
+            }
+
+            @media (max-width: 480px) {
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+                .full-width {
+                    grid-column: span 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-card">
+            <div class="header">
+                <h3>KPR CAS Portal</h3>
+            </div>
+
+            <div class="section-label">Identity</div>
+            <div class="grid">
+                <div class="input-group">
+                    <label>Name (UPPERCASE):</label>
+                    <input type="text" id="name" placeholder="Enter Name" />
+                </div>
+                <div class="input-group">
+                    <label>Reg. No:</label>
+                    <input type="text" id="regno" placeholder="Enter Reg No" />
+                </div>
+            </div>
+
+            <div class="section-label">Academic Details</div>
+            <div class="grid">
+                <div class="input-group">
+                    <label>Academic Year:</label>
+                    <select id="academic_year">
+                        <option value="2025-2026">2025-2026</option>
+                        <option value="2026-2027">2026-2027</option>
+                        <option value="2027-2028">2027-2028</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Batch:</label>
+                    <select id="batch">
+                        <option value="2024-2027">2024-2027</option>
+                        <option value="2025-2028">2025-2028</option>
+                        <option value="2026-2029">2026-2029</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Semester:</label>
+                    <select id="sem">
+                        <option value="SEM - I">SEM - I</option>
+                        <option value="SEM - II">SEM - II</option>
+                        <option value="SEM - III">SEM - III</option>
+                        <option value="SEM - IV">SEM - IV</option>
+                         <option value="SEM - V">SEM - V</option>
+                          <option value="SEM - VI">SEM - VI</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Class:</label>
+                    <select id="class_val">
+                        <option value="I- B.SC.CT">I- B.SC.CT</option>
+                        <option value="II- B.SC.CT">II- B.SC.CT</option>
+                        <option value="III- B.SC.CT">III- B.SC.CT</option>
+                    </select>
+                </div>
+                <div class="input-group full-width">
+                    <label>Department:</label>
+                    <select id="dept">
+                        <option value="COMPUTER TECHNOLOGY">
+                            Computer Technology
+                        </option>
+                        <option value="COMPUTER SCIENCE">
+                            Computer Science
+                        </option>
+                        <option value="INFORMATION TECHNOLOGY">
+                            Information Technology
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-label">Assignment Info</div>
+            <div class="grid">
+                <div class="input-group full-width">
+                    <label>Course (Subject):</label>
+                    <select id="course">
+                        <option value="System Software and Operating Software">
+                            SSOS
+                        </option>
+                        <option value="Data Structures">Data Structures</option>
+                        <option value="Python Programming">
+                            Python Programming
+                        </option>
+                        <option value="Network Security">
+                            Network Security
+                        </option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Course Code:</label>
+                    <input type="text" id="course_code" placeholder="43A" />
+                </div>
+                <div class="input-group">
+                    <label>Submission Date:</label>
+                    <input type="date" id="date" />
+                </div>
+                <div class="input-group full-width">
+                    <label>Assignment Topic:</label>
+                    <input
+                        type="text"
+                        id="topic"
+                        placeholder="e.g., Demand Paging"
+                    />
+                </div>
+                <div class="input-group full-width">
+                    <label>Course In-charge:</label>
+                    <select id="incharge">
+                        <option value="Dr. SDE. Kalaivani">Kalaivani SDE</option>
+                        <option value="Dr. K. Arasur">Dr. K. Arasur</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="generatePDF()">Generate & Download PDF</button>
+        </div>
+
+        <script>
+            const ids = [
+                "name",
+                "regno",
+                "dept",
+                "academic_year",
+                "sem",
+                "batch",
+                "course",
+                "course_code",
+                "class_val",
+                "topic",
+                "incharge",
+                "date",
+            ];
+
+            window.onload = function () {
+                ids.forEach((id) => {
+                    const saved = localStorage.getItem(id);
+                    if (saved) document.getElementById(id).value = saved;
+                });
+            };
+
+            async function generatePDF() {
+                const data = {};
+                ids.forEach((id) => {
+                    data[id] = document.getElementById(id).value;
+                    localStorage.setItem(id, data[id]);
+                });
+
+                const apiUrl = window.location.origin.startsWith("http")
+                    ? `${window.location.origin}/generate-pdf`
+                    : "http://127.0.0.1:5000/generate-pdf";
+
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = `FrontPage_${data.name.toUpperCase()}.pdf`;
+                    a.click();
+                } else {
+                    alert(
+                        "Failed to generate PDF. Ensure the server is running.",
+                    );
+                }
+            }
+        </script>
+    </body>
+</html>
